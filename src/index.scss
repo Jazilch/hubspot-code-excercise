@@ -1,0 +1,262 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:300,400');
+@import url('https://use.fontawesome.com/releases/v5.6.3/css/all.css');
+$primaryFont: 'Montserrat';
+$secondaryFont: 'Roboto Slab';
+$primaryFontColor: #615c5a;
+$secondaryFontColor: #94979b;
+* {
+  box-sizing: border-box;
+}
+
+body {
+  div#root {
+    background-color: #fff;
+    padding: 40px 0;
+  }
+}
+
+body {
+  font-family: $primaryFont;
+  color: $primaryFontColor;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+.page-center {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.filter__controls {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filters {
+  padding: 20px;
+  border: 1px solid #ccc;
+}
+
+.filter {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filter__select {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 130px;
+  padding: 10px 15px;
+  margin-right: 15px;
+  background-color: #f9f9f9;
+  outline: none;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-bottom: 4px solid #e6e6e6;
+  &::after {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    content: '\f107';
+    margin-left: auto;
+  }
+}
+
+.filter__dropdown {
+  position: absolute;
+  top: 130%;
+  left: 0;
+  width: 200px;
+  padding: 0;
+  z-index: 2;
+  background-color: #fff;
+  list-style: none;
+  border: 1px solid #ccc;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  &::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 20%;
+    width: 1em;
+    height: 1em;
+    margin-top: -20px;
+    background-color: #fff;
+    transform: rotate(45deg);
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-right: none;
+  }
+}
+
+.filter__item {
+  position: relative;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  border-bottom: 1px solid #ccc;
+}
+
+.filter__radio {
+  padding: 10px;
+}
+
+.filter__search,
+.filter__clear {
+  margin-left: auto;
+}
+
+.filter__clear {
+  padding: 10px;
+}
+
+.filter__clear--primary {
+  color: #67bae8;
+}
+
+.filter__search--primary {
+  line-height: 27px;
+  font-size: 18px;
+  padding: 4px;
+}
+
+.icon::after {
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+}
+
+.search::after {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f002';
+  transform: translate(-25px);
+}
+
+.movie-grid {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  border: 1px solid #ccc;
+  min-height: 50vw;
+  padding: 0;
+  list-style: none;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie-item {
+  flex: 0 0 calc(33% - 20px);
+  margin: 20px 10px;
+}
+
+.movie-item img {
+  display: block;
+  width: 100%;
+}
+.movie__year {
+  margin-left: 5px;
+}
+
+.movie__genres {
+  text-transform: capitalize;
+}
+
+.testimonial {
+  background-color: #f9f8f7;
+  margin-top: 3rem;
+}
+
+.testimonial__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem 1rem;
+  min-height: 220px;
+}
+
+.testimonial__content {
+  flex-basis: 45%;
+  position: relative;
+  font-family: $secondaryFont;
+  padding: 0 25px;
+  border-left: 2px solid #ef7943;
+  &::before {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    content: '\f10d';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: -15px;
+    left: -21px;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background: #ef7943;
+  }
+  & span::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: -7px;
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    background: #ef7943;
+  }
+}
+
+.testimonial__button {
+  display: inline-block;
+  background-color: #3aa4e2;
+  outline: none;
+  border-radius: 5px;
+  padding: 20px 25px;
+  color: #fff;
+  text-transform: uppercase;
+}
+@media (max-width: 767px) {
+  .movie-item {
+    flex: 1 0 calc(33% - 20px);
+  }
+}
+@media (max-width: 580px) {
+  .filter {
+    display: flex;
+    justify-content: center;
+  }
+  .filter__search {
+    margin-top: 15px;
+  }
+  .filter__search,
+  .filter__clear {
+    margin-left: 0;
+  }
+  .empty-state {
+    text-align: center;
+  }
+  .testimonial__container {
+    flex-direction: column;
+  }
+  .testimonial__button {
+    margin-top: 20px;
+  }
+}
